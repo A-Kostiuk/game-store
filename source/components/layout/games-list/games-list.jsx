@@ -7,7 +7,7 @@ function GamesList() {
   return (
     <GamesListStyled>
       {GAMES.map((game) =>
-        (<GameItem key={game.id}><GameCard {...game} /></GameItem>))}
+        (<GameItem key={game.id}><GameCard game = {game} /></GameItem>))}
     </GamesListStyled>
   );
 }

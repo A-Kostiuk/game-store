@@ -1,5 +1,6 @@
 export const defaultTheme = {
   colors: {
+    customBlack: '#242680',
     customBlue: '#5558ed',
     customGrey: '#909090',
     cardBackground: '#242529',
@@ -8,7 +9,7 @@ export const defaultTheme = {
     defaultWhite: '#FFFFFF',
   },
   fontFamily: 'Roboto',
-  fontSizeDefault: '14px',
+  fontSizeDefault: '16px',
   lineHeightDefault: '20px',
   fontWeightDefault: '400',
   mobileWidth: '360px',

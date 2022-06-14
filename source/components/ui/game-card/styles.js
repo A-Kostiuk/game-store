@@ -33,18 +33,7 @@ export const GamePrice = styled.div`
   position: absolute;
   bottom: 20px;
   right: 20px;
-`;
-
-export const PriceText = styled.span``;
-
-export const CardButton = styled.button`
-  font-family: inherit;
-  font-size: 16px;
-  color: inherit;
-  cursor: pointer;
-  border: none;
-  background-color: ${(props) => props.theme.colors.customBlue};
-  margin-left: 10px;
-  padding: 5px 10px;
-  border-radius: 27px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
 `;
