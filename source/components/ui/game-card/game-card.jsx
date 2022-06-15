@@ -1,5 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { deleteItemFromCart, setItemInCart } from 'src/redux/cart/reducer';
+import Button from 'src/components/ui/button/button';
 import {
   Description,
   GamePrice,
@@ -8,8 +10,6 @@ import {
   Image,
   Title
 } from 'src/components/ui/game-card/styles';
-import { deleteItemFromCart, setItemInCart } from 'src/redux/cart/reducer';
-import Button from 'src/components/ui/button/button';
 
 function GameCard({ game }) {
   const
@@ -30,14 +30,13 @@ function GameCard({ game }) {
     }
   };
 
-
   return (
     <>
-      <Image src={`/img${image}`} width={320} height={170} />
+      <Image src={`/img${image}`} width={320} height={170} alt={title}/>
       <Description>
         <Title>{title}</Title>
         <GenresList>
-          {genres.map((genr) => <GenrItem key={genr}>{genr}</GenrItem>)}
+          {genres.map((genre) => <GenrItem key={genre}>{genre}</GenrItem>)}
         </GenresList>
       </Description>
       <GamePrice>

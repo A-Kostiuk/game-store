@@ -6,7 +6,7 @@ import {
   CartItemsList,
   StyledCartMenu,
   TotalPrice
-} from 'src/components/ui/cart-menu/styles';
+} from 'src/components/layout/cart-menu/styles';
 import { calcTotalPrice } from 'src/components/utils';
 import CartItem from 'src/components/ui/cart-item/cart-item';
 import { deleteItemFromCart } from 'src/redux/cart/reducer';

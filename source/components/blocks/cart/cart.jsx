@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { CartIcon, CartWrapper, IconWrapper, TotalPrice } from 'src/components/blocks/cart/styles';
-import CartMenu from 'src/components/ui/cart-menu/cart-menu';
+import CartMenu from 'src/components/layout/cart-menu/cart-menu';
 import { calcTotalPrice } from 'src/components/utils';
 
 function Cart() {
