@@ -4,7 +4,7 @@ export const defaultTheme = {
     customBlue: '#5558ed',
     customGrey: '#909090',
     cardBackground: '#242529',
-    background: '#73777B',
+    background: '#2C2D2E',
     defaultBlack: 'rgba(0, 0, 0, 1)',
     defaultWhite: '#FFFFFF',
   },

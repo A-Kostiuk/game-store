@@ -17,12 +17,3 @@ export const GamesListStyled = styled(Ul)`
     gap: 20px;
   }
 `;
-
-export const GameItem = styled(Li)`
-  position: relative;
-  min-height: 300px;
-  width: 100%;
-  background-color: ${(props) => props.theme.colors.cardBackground};
-  border-radius: 15px;
-  overflow: hidden;
-`;

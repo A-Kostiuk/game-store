@@ -1,17 +1,23 @@
 import React from 'react';
-import { Paragraph } from 'src/components/styled';
+import { DeleteButton, Paragraph } from 'src/components/styled';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { CartItemPrice, CloseButton, StyledCartItem } from 'src/components/ui/cart-item/styles';
+import { CartItemPrice, StyledCartItem } from 'src/components/ui/cart-item/styles';
+import { useDispatch } from 'react-redux';
+import { deleteItemFromCart } from 'src/redux/cart/reducer';
 
-function CartItem({ title, price, id, onClick }) {
+function CartItem({ title, price, id }) {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(deleteItemFromCart(id));
+  };
   return (
     <StyledCartItem>
       <Paragraph>{title}</Paragraph>
       <CartItemPrice>
         <span>{price} грн.</span>
-        <CloseButton onClick={() => onClick(id)} >
-          <AiOutlineCloseCircle color='white' size={15} title='Close button'/>
-        </CloseButton>
+        <DeleteButton onClick={handleClick}>
+          <AiOutlineCloseCircle color='white' size={15} title='Delete game' />
+        </DeleteButton>
       </CartItemPrice>
     </StyledCartItem>
   );

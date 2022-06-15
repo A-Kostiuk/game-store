@@ -16,12 +16,3 @@ export const CartItemPrice = styled.div`
   gap: 10px;
   align-items: center;
 `;
-
-export const CloseButton = styled.button`
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  border: none;
-  line-height: 0;
-  background: rgba(0, 0, 0, 0);
-`;

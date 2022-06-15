@@ -14,7 +14,7 @@ function Cart() {
         <CartIcon size={25} onClick={() => setCartMenuVisible(!isCartMenuVisible)} />
       </IconWrapper>
       {items.length > 0 ? <TotalPrice>{totalPrice} грн.</TotalPrice> : null}
-      {isCartMenuVisible ? <CartMenu items={items} /> : null}
+      {isCartMenuVisible ? <CartMenu items={items} setCartMenuVisible={setCartMenuVisible}/> : null}
     </CartWrapper>
   );
 }

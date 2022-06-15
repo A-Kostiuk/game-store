@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import { css } from 'styled-components';
 
-export const VisuallyHiddenTitle = styled.h1`
+const visuallyHidden = css`
   position: absolute;
   width: 1px;
   height: 1px;
@@ -10,3 +10,5 @@ export const VisuallyHiddenTitle = styled.h1`
   clip: rect(0 0 0 0);
   overflow: hidden;
 `;
+
+export default visuallyHidden;

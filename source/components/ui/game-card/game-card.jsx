@@ -1,51 +1,39 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteItemFromCart, setItemInCart } from 'src/redux/cart/reducer';
-import Button from 'src/components/ui/button/button';
+import { useNavigate  } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import GameBuy from 'src/components/ui/game-buy/game-buy';
 import {
   Description,
-  GamePrice,
-  GenresList,
-  GenrItem,
+  GameCardStyled,
   Image,
   Title
 } from 'src/components/ui/game-card/styles';
+import { AppRoute } from 'src/const';
+import { setCurrentGame } from 'src/redux/games/reducer';
+import GenresList from 'src/components/ui/genres-list/genres-list';
 
 function GameCard({ game }) {
   const
-    {
-      title, genres, image, price,
-    }
-      = game;
+    { title, genres, image } = game;
 
-  const items = useSelector((state) => state.cart.itemsInCart);
-  const isItemInCart = items.some((item) => item.id === game.id);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleClick = (evt) => {
-    evt.stopPropagation();
-    if (isItemInCart) {
-      dispatch(deleteItemFromCart(game.id));
-    } else {
-      dispatch(setItemInCart(game));
-    }
+
+  const handleClick = () => {
+    const gamePath = game.title.toLowerCase().replace(/\W/g, '-');
+    dispatch(setCurrentGame(game));
+    navigate(`${AppRoute.GAMES + gamePath}`);
   };
 
   return (
-    <>
-      <Image src={`/img${image}`} width={320} height={170} alt={title}/>
+    <GameCardStyled onClick={handleClick}>
+      <Image src={`/img${image}`} width={320} height={170} alt={title} />
       <Description>
         <Title>{title}</Title>
-        <GenresList>
-          {genres.map((genre) => <GenrItem key={genre}>{genre}</GenrItem>)}
-        </GenresList>
+        <GenresList genres={genres}/>
       </Description>
-      <GamePrice>
-        <span>{price} грн.</span>
-        <Button onClick={handleClick} isItemInCart={isItemInCart}>
-          {isItemInCart ? 'Прибрати із кошика' : 'В кошик'}
-        </Button>
-      </GamePrice>
-    </>
+      <GameBuy game={game} />
+    </GameCardStyled>
   );
 }
 
