@@ -8,7 +8,7 @@ function GameDescription({game}) {
   const {image, title, description, genres} = game;
   return (
     <Container>
-      <Image src={`/img${image}`} width={320} height={170} alt={title} />
+      <Image src={`./img${image}`} width={320} height={170} alt={title} />
       <Paragraph $marginBottom={20}>{description}</Paragraph>
       <GenresTitle $marginBottom={20}>Популярні мітки для цього продукту:</GenresTitle>
       <GenresList genres={genres}/>

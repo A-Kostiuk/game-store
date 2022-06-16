@@ -16,7 +16,7 @@ function CartItem({ title, price, id }) {
       <CartItemPrice>
         <span>{price} грн.</span>
         <DeleteButton onClick={handleClick}>
-          <AiOutlineCloseCircle color='white' size={15} title='Delete game' />
+          <AiOutlineCloseCircle color='white' size={15} />
         </DeleteButton>
       </CartItemPrice>
     </StyledCartItem>

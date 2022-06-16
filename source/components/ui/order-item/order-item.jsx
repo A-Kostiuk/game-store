@@ -15,7 +15,7 @@ function OrderItem({ image, title, price, id }) {
 
   return (
     <OrderItemStyled>
-      <Image src={`/img${image}`} width={200} height={170} alt={title} />
+      <Image src={`./img${image}`} width={200} height={170} alt={title} />
       <Title level={2}>{title}</Title>
       <div>
         <PriceWrapper>
@@ -23,7 +23,7 @@ function OrderItem({ image, title, price, id }) {
             {`${price} грн.`}
           </PriceText>
           <DeleteButton onClick={handleClick}>
-            <AiOutlineCloseCircle color='white' size={30} title='Delete game' />
+            <AiOutlineCloseCircle color='white' size={30} />
           </DeleteButton>
         </PriceWrapper>
       </div>

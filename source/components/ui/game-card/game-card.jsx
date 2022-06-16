@@ -27,7 +27,7 @@ function GameCard({ game }) {
 
   return (
     <GameCardStyled onClick={handleClick}>
-      <Image src={`/img${image}`} width={320} height={170} alt={title} />
+      <Image src={`./img${image}`} width={320} height={170} alt={title} />
       <Description>
         <Title>{title}</Title>
         <GenresList genres={genres}/>

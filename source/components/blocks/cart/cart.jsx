@@ -7,14 +7,17 @@ import { calcTotalPrice } from 'src/components/utils';
 function Cart() {
   const [isCartMenuVisible, setCartMenuVisible] = useState(false);
   const items = useSelector((state) => state.cart.itemsInCart);
-  const totalPrice = calcTotalPrice(items);
+  const handleClick = () => {
+    setCartMenuVisible(!isCartMenuVisible);
+  };
+
   return (
     <CartWrapper>
       <IconWrapper $quantity={items.length}>
-        <CartIcon size={25} onClick={() => setCartMenuVisible(!isCartMenuVisible)} />
+        <CartIcon size={25} onClick={handleClick} />
       </IconWrapper>
-      {items.length > 0 ? <TotalPrice>{totalPrice} грн.</TotalPrice> : null}
-      {isCartMenuVisible ? <CartMenu items={items} setCartMenuVisible={setCartMenuVisible}/> : null}
+      {items.length > 0 ? <TotalPrice>{calcTotalPrice(items)} грн.</TotalPrice> : null}
+      {isCartMenuVisible ? <CartMenu items={items} setCartMenuVisible={setCartMenuVisible} /> : null}
     </CartWrapper>
   );
 }
